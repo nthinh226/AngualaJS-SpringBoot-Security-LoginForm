@@ -5,9 +5,11 @@ package vn.mobileid.simplelogin.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import static java.lang.Integer.max;
 import vn.mobileid.simplelogin.entity.Product;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,17 +26,34 @@ import vn.mobileid.simplelogin.utils.RandomString;
 @RestController
 @RequestMapping
 public class ProductServiceController {
-
+    
     private static final Map<String, Product> productRepo = new HashMap<>();
 
     static {
-
-        for (int i = 0; i < 15; i++) {
-            String name = RandomString.getAlphaNumericString(5);
-            Product produc = new Product();
-            produc.setId(Integer.toString(i + 1));
-            produc.setName(name);
-            productRepo.put(produc.getId(), produc);
+        
+        String[] productName = {
+            "Iphone Xr",
+            "Iphone 11",
+            "Iphone 11 pro",
+            "Iphone 11 pro max",
+            "Iphone 12 pro max",
+            "Iphone 13 pro max",
+            "Iphone 14 pro max",
+            "Apple Watch SE",
+            "Apple Watch SE2",
+            "Apple Watch Serial 6",
+        };
+        
+        for (int i = 0; i < 10; i++) {
+//            String name = RandomString.getAlphaNumericString(5);
+            Product product = new Product();
+            product.setId(Integer.toString(i + 1));
+            product.setName(productName[i]);
+            product.setColor("Black");
+            product.setPrice(10000000);
+            product.setDetail("Chi tiết sản phẩm "+ product.getName());
+            
+            productRepo.put(product.getId(), product);
         }
 
     }

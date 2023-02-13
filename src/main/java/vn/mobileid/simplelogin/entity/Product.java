@@ -13,15 +13,9 @@ public class Product {
 
     private String id;
     private String name;
-
-    public Product() {
-
-    }
-
-    public Product(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private String color;
+    private Integer price;
+    private String detail;
 
     public String getId() {
         return id;
@@ -38,4 +32,30 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    
 }
