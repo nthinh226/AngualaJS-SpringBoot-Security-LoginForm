@@ -25,8 +25,14 @@ public class WebController {
         return "login"; // Trả về login.html
     }
 
+    @RequestMapping("/product-modal")
+    public String productmodal() {
+        return "product-modal"; // Trả về product-modal.html
+    }
+
     @RequestMapping("/products")
     public String home() {
         return "product"; // Trả về product.html
     }
+
 }

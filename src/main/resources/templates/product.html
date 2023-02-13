@@ -3,6 +3,19 @@
     <head>
         <title>List Product</title>
         <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+        <style>
+            .modal.fade.in {
+                opacity: 1 !important;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal.fade .modal-dialog {
+                margin-top: 5rem;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -18,10 +31,10 @@
                     </thead>
 
                     <tbody>                    
-                        <tr ng-repeat = "product in products">
-                        <td>{{ product.id}}</td>
-                        <td>{{ product.name}}</td>
-                    </tr>
+                        <tr ng-repeat = "product in products" ng-click="openModal(product)"> 
+                            <td>{{ product.id}}</td>
+                            <td>{{ product.name}}</td>
+                        </tr>
                     </tbody>
 
                 </table>
@@ -31,9 +44,11 @@
             </form>
         </div>
 
-
         <script src="js/lib/angular.min.js"></script>
-        <script src="js/app/productController.js"></script>
+        <!--<script src="js/lib/ui-bootstrap.js"></script>-->
+        <script src="js/lib/ui-bootstrap-tpls.min.js"></script>
+        <script src="js/app/app.js"></script>
+        <!--<script src="js/app/productController.js"></script>-->
 
     </body>
 </html>
