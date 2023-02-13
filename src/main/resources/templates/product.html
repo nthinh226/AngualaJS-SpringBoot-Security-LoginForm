@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>List Product</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            <div ng-app = "app" ng-controller = "productController">
+
+                <table class="table table-hover">
+                    <thead>                    
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>                    
+                        <tr ng-repeat = "product in products">
+                        <td>{{ product.id}}</td>
+                        <td>{{ product.name}}</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+
+
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/app/product.js"></script>
+
+    </body>
+</html>
