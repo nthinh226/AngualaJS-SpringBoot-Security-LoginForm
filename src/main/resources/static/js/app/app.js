@@ -53,7 +53,6 @@ app.controller('productController', ['$scope', '$uibModal', '$http', function ($
 //        };
 
         $scope.openModal = function (product) {
-            console.log(product)
             $scope.selectedProduct = product;
             
             var modalInstance = $uibModal.open({
@@ -61,10 +60,6 @@ app.controller('productController', ['$scope', '$uibModal', '$http', function ($
                 controller: "ModalContentCtrl",
                 size: '',
                 scope: $scope
-            });
-
-            modalInstance.result.then(function (response) {
-                $scope.result = `${response} button hitted`;
             });
 
         };
