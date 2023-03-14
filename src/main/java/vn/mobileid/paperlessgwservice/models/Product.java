@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vn.mobileid.simplelogin.entity;
+package vn.mobileid.paperlessgwservice.models;
 
 /**
  *

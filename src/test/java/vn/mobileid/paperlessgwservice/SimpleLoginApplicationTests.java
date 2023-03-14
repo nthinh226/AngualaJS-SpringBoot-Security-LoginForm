@@ -1,4 +1,4 @@
-package vn.mobileid.simplelogin;
+package vn.mobileid.paperlessgwservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
